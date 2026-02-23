@@ -1,122 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Natalia — Manicure & Podology</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <div class="page">
+
+    <!-- HERO -->
     <header class="hero">
       <div class="avatar">
-        <img src="avatar.jpeg" alt="Natalia portrait">
+        <img src="avatar.jpeg" alt="Портрет мастера Наталии" />
       </div>
 
       <h1 class="name">Natalia</h1>
       <h2 class="profession">Manicure & Pedicure Master, Podologist</h2>
 
       <p class="intro">
-        С любовью и точностью создаю красоту и здоровье ваших ногтей.<br>
+        С любовью и точностью создаю красоту и здоровье ваших ногтей.<br />
         <span>7 лет создаю идеальные ногти: опыт, который говорит за меня</span>
       </p>
+
+      <button class="cta-button" id="openModal">
+        Записаться на приём
+      </button>
     </header>
 
-    <main class="content">
+
+    <!-- ОПИСАНИЕ -->
+    <main class="content fade-in">
       <p>
-        За годы, посвящённые искусству маникюра и подологии, я освоила специализированные услуги в области маникюра, педикюра и подологии. Мой подход сочетает эстетическое совершенство с медицинскими знаниями, гарантируя клиентам не только красоту, но и заботу о здоровье.
+        За годы, посвящённые искусству маникюра и подологии, я освоила
+        специализированные услуги в области маникюра, педикюра и подологии.
+        Мой подход сочетает эстетическое совершенство с медицинскими знаниями,
+        гарантируя клиентам не только красоту, но и заботу о здоровье.
       </p>
     </main>
-      <button class="cta-button" id="openModal">
-  Записаться на приём
-</button>
 
-<section class="portfolio">
-  <h2>Portfolio</h2>
 
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="img/nails1.jpg" alt="Silver Liquid Metal Design">
-      <p>Серебристый дизайн из жидкого металла</p>
-    </div>
+    <!-- ПОРТФОЛИО -->
+    <section class="portfolio fade-in">
+      <h2>Portfolio</h2>
 
-    <div class="portfolio-item">
-      <img src="img/nails2.jpg" alt="Perfect Glazed Square">
-      <p>Идеальный квадрат</p>
-    </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="img/nails1.jpg" alt="Серебристый дизайн из жидкого металла" />
+          <p>Серебристый дизайн из жидкого металла</p>
+        </div>
 
-    <div class="portfolio-item">
-      <img src="img/nails3.jpg" alt="Artistic French">
-      <p>Креативный френч</p>
+        <div class="portfolio-item">
+          <img src="img/nails2.jpg" alt="Идеальный квадрат" />
+          <p>Идеальный квадрат</p>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="img/nails3.jpg" alt="Креативный френч" />
+          <p>Креативный френч</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- УСЛУГИ -->
+    <section class="services fade-in">
+      <h2>Services & Investment</h2>
+
+      <ul>
+        <li>
+          <span>Классический / Аппаратный маникюр</span>
+          <strong>800 ₽</strong>
+        </li>
+        <li>
+          <span>Маникюр с использованием гель-лака (однотонный)</span>
+          <strong>1000 ₽</strong>
+        </li>
+        <li>
+          <span>Френч / Омбре</span>
+          <strong>+ 100 ₽</strong>
+        </li>
+        <li>
+          <span>Наращивание (1–4 длина)</span>
+          <strong>1600 ₽</strong>
+        </li>
+        <li>
+          <span>Консультация подолога</span>
+          <strong>1000 ₽</strong>
+        </li>
+        <li>
+          <span>Полный педикюр</span>
+          <strong>1500 ₽</strong>
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- КОНТАКТЫ -->
+    <footer class="contacts">
+      <a href="#" class="icon telegram">
+        <img src="icons/telegram.svg" alt="Telegram" />
+      </a>
+      <a href="#" class="icon instagram">
+        <img src="icons/instagram.svg" alt="Instagram" />
+      </a>
+      <a href="#" class="icon whatsapp">
+        <img src="icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+    </footer>
+
+  </div>
+
+
+  <!-- МОДАЛЬНОЕ ОКНО -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close" id="closeModal">×</button>
+
+      <h3>Записаться на приём</h3>
+
+      <!-- Убираем Formspree -->
+      <form>
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <input type="tel" name="phone" placeholder="Телефон" required />
+        <textarea name="message" placeholder="Комментарий (по желанию)"></textarea>
+
+        <button type="submit" class="submit-btn">
+          Отправить
+        </button>
+      </form>
     </div>
   </div>
-</section>
 
-<section class="services">
-  <h2>Services & Investment</h2>
- <ul>
-    <li>
-      <span>Классический / Аппаратный маникюр</span>
-        <strong>800 ₽</strong>
-      </li>
-      <li>
-      <span>Маникюр с использованием гель-лака (однотонный)</span>
-        <strong>1000 ₽</strong>
-      </li>
-      <li>
-      <span>Френч/Омбре</span>
-        <strong>+ 100 ₽</strong>
-      </li>
-      <li>
-      <span>Наращивание (от 1 до 4)</span>
-        <strong>1600 ₽</strong>
-      </li>
-      <li>
-      <span>Консультация подолога</span>
-        <strong>1000 ₽</strong>
-      </li>
-      <li>
-      <span>Полный педикюр</span>
-        <strong>1500 ₽</strong>
-      </li>
-  </ul>
-</section>
 
-<footer class="contacts">
-  <a href="#" class="icon telegram">
-    <img src="icons/telegram.svg" alt="Telegram">
-  </a>
-  <a href="#" class="icon instagram">
-    <img src="icons/instagram.svg" alt="Instagram">
-  </a>
-  <a href="#" class="icon whatsapp">
-    <img src="icons/whatsapp.svg" alt="WhatsApp">
-  </a>
-</footer>
-</div>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <button class="close" id="closeModal">×</button>
-
-    <h3>Записаться на приём</h3>
-
-    <form action="https://formspree.io/f/xnjbjlqk" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required>
-      <input type="tel" name="phone" placeholder="Телефон" required>
-      <textarea name="message" placeholder="Комментарий (по желанию)"></textarea>
-
-      <button type="submit" class="submit-btn">
-        Отправить
-      </button>
-      <p class="form-status"></p>
-    </form>
+  <!-- УВЕДОМЛЕНИЕ -->
+  <div id="notification" class="notification">
+    <span id="notification-text"></span>
   </div>
-</div>
 
-<section class="portfolio fade-in">
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
