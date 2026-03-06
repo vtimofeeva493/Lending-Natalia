@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ path: "./backend-files/.env" });
 
 const app = express();
 app.use(cors());
@@ -21,17 +21,30 @@ app.post("/send", async (req, res) => {
 `;
 
   try {
-    await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: process.env.CHAT_ID,
-        text: text
-      })
-    });
+    const response = await fetch(
+      `https://api.telegram.org/bot8178195101:AAHs3gcHCFBOAEgrnJh8HBPpwPsFU_d7tKM/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: 8573441422,
+          text: text,
+          parse_mode: "HTML"
+        })
+      }
+    );
 
-    res.json({ success: true });
+    const data = await response.json();
+    console.log("Telegram response:", data);
+
+    if (data.ok) {
+      res.json({ success: true });
+    } else {
+      res.status(500).json({ success: false, error: data });
+    }
+
   } catch (error) {
+    console.error("Server error:", error);
     res.status(500).json({ success: false });
   }
 });
@@ -39,3 +52,4 @@ app.post("/send", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
+
