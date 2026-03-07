@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
 
-dotenv.config();
+dotenv.config({ path: "./backend-files/.env" });
 
 const app = express();
 
@@ -66,3 +66,4 @@ app.post("/send", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
+
