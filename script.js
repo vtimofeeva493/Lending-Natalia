@@ -94,7 +94,7 @@ if (form) {
     submitBtn.textContent = "Отправка...";
 
     try {
-      const response = await fetch("https://lending-natalia.onrender.com", {
+      const response = await fetch("https://lending-natalia.onrender.com/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
